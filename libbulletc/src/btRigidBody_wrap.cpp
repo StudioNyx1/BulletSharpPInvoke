@@ -557,6 +557,11 @@ void btRigidBody_setDamping(btRigidBody* obj, btScalar lin_damping, const btVect
 	obj->setDamping(lin_damping, BTVECTOR3_USE(ang_damping));
 }
 
+void btRigidBody_setAddedMass(btRigidBody* obj, btScalar addedMass)
+{
+	obj->setAddedMass(addedMass);
+}
+
 void btRigidBody_setFlags(btRigidBody* obj, int flags)
 {
 	obj->setFlags(flags);

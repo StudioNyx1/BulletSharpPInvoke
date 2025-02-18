@@ -228,6 +228,11 @@ namespace BulletSharp
 			btRigidBody_setDamping(Native, linDamping, angDamping);
 		}
 
+		public void SetAddedMass(double addedMass)
+		{
+            btRigidBody_setAddedMass(Native, addedMass);
+        }
+
 		public void SetMassPropsRef(double mass, ref Vector3 inertia)
 		{
 			btRigidBody_setMassProps(Native, mass, ref inertia);

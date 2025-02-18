@@ -102,6 +102,7 @@ extern "C" {
 	EXPORT void btRigidBody_setCenterOfMassTransform(btRigidBody* obj, const btTransform* xform);
 	EXPORT void btRigidBody_setContactSolverType(btRigidBody* obj, int value);
 	EXPORT void btRigidBody_setDamping(btRigidBody* obj, btScalar lin_damping, const btVector3* ang_damping);
+	EXPORT void btRigidBody_setAddedMass(btRigidBody* obj, btScalar addedMass);
 	EXPORT void btRigidBody_setFlags(btRigidBody* obj, int flags);
 	EXPORT void btRigidBody_setFrictionSolverType(btRigidBody* obj, int value);
 	EXPORT void btRigidBody_setGravity(btRigidBody* obj, const btVector3* acceleration);

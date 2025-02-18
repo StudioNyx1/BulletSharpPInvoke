@@ -4774,7 +4774,9 @@ namespace BulletSharp
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btRigidBody_setDamping(IntPtr obj, double lin_damping, [In] Vector3 ang_damping);
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btRigidBody_setFlags(IntPtr obj, RigidBodyFlags flags);
+        public static extern void btRigidBody_setAddedMass(IntPtr obj, double addedMass);
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btRigidBody_setFlags(IntPtr obj, RigidBodyFlags flags);
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btRigidBody_setFrictionSolverType(IntPtr obj, int value);
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
