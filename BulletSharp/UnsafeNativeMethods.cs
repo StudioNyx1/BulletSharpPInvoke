@@ -7822,6 +7822,9 @@ namespace BulletSharp
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btCable_setLinearMass(IntPtr obj, double mass);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setMaxTension(IntPtr obj, double maxTension);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btCable_setCollisionStiffness(IntPtr obj, double stiffnessMin, double stiffnessMax, double distMin, double distMax);

@@ -378,6 +378,11 @@ namespace BulletSharp.SoftBody
 			btCable_setLinearMass(Native, mass);
 		}
 
+		public void SetCableMaxTension(double maxTension)
+		{
+			btCable_setMaxTension(Native, maxTension);
+		}
+		
 		public void SetCollisionViscosity(double coef)
 		{
 			btCable_setCollisionViscosity(Native, coef);
