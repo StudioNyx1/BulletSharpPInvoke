@@ -556,6 +556,11 @@ namespace BulletSharp
         {
             btRigidBody_resetInterpolationWorldTransform(Native);
         }
+
+		public void SetCableCollisionObject(CollisionObject cableCollisionObject, Matrix cableCollisionObjectLocalTransform)
+        {
+			btRigidBody_setCableCollisionObject(Native, cableCollisionObject.Native, ref cableCollisionObjectLocalTransform);
+		}
     }
 
 	[StructLayout(LayoutKind.Sequential)]

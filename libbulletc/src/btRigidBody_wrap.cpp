@@ -686,6 +686,13 @@ void btRigidBody_updateMassAyImpact(btRigidBody* obj, bool canChangedMassAtImpac
 	obj->updateMassAtImpact(canChangedMassAtImpact, lowerMass, upperMass, lowerLimit, upperLimit);
 }
 
+void btRigidBody_setCableCollisionObject(btRigidBody* obj, btCollisionObject* cableCollisionObject, const btTransform* cableCollisionObjectLocalTransform)
+{
+	obj->m_cableCollisionObject = cableCollisionObject;
+	BTTRANSFORM_IN(cableCollisionObjectLocalTransform);
+	obj->m_cableCollisionLocalTransform = BTTRANSFORM_USE(cableCollisionObjectLocalTransform);
+}
+
 void btRigidBody_resetInterpolationWorldTransform(btRigidBody* obj)
 {
 	obj->resetInterpolationWorldTransform();

@@ -126,6 +126,7 @@ extern "C" {
 	EXPORT void btRigidBody_setLocalTransform(btRigidBody* obj, const btTransform* transform);
 	EXPORT void btRigidBody_setRedirectionTarget(btRigidBody* obj, btRigidBody* target);
 	EXPORT void btRigidBody_updateMassAyImpact(btRigidBody* obj, bool canChangedMassAtImpact, btScalar lowerMass, btScalar upperMass, btScalar lowerLimit, btScalar upperLimit);
+	EXPORT void btRigidBody_setCableCollisionObject(btRigidBody* obj, btCollisionObject* cableCollisionObject, const btTransform* cableCollisionObjectLocalTransform);
 
 	EXPORT void btRigidBody_resetInterpolationWorldTransform(btRigidBody* obj);
 #ifdef __cplusplus

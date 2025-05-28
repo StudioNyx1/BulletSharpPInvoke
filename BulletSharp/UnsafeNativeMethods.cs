@@ -4819,7 +4819,10 @@ namespace BulletSharp
 		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
-        
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btRigidBody_setCableCollisionObject(IntPtr obj, IntPtr cableCollisionObject, [In] ref Matrix cableCollisionObjectLocalTransform);
+
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_addKinematic(IntPtr obj, IntPtr toAdd);
         		
