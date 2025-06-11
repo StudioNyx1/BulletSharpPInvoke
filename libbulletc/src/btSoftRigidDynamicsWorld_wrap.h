@@ -20,6 +20,8 @@ extern "C" {
 	EXPORT void* btGetNodesData(btSoftRigidDynamicsWorld* obj);
 	EXPORT int* btGetCableIndexesArray(btSoftRigidDynamicsWorld* obj);
 	EXPORT int btGetHydroNodesNumber(btSoftRigidDynamicsWorld* obj);
+	EXPORT void btSoftRigidDynamicsWorld_addMapCableCollisionObjects(btSoftRigidDynamicsWorld* world, btCollisionObject* key, btCollisionObject* value);
+	EXPORT void btSoftRigidDynamicsWorld_eraseMapCableCollisionObjects(btSoftRigidDynamicsWorld* world, btCollisionObject* key);
 #ifdef __cplusplus
 }
 #endif

@@ -97,4 +97,12 @@ int btGetHydroNodesNumber(btSoftRigidDynamicsWorld* obj)
 	return obj->getHydroNodesNumber();
 }
 
+void btSoftRigidDynamicsWorld_addMapCableCollisionObjects(btSoftRigidDynamicsWorld* world, btCollisionObject* key, btCollisionObject* value)
+{
+	world->m_cableCollisionObjects.insert({ key, value });
+}
 
+void btSoftRigidDynamicsWorld_eraseMapCableCollisionObjects(btSoftRigidDynamicsWorld* world, btCollisionObject* key)
+{
+	world->m_cableCollisionObjects.erase(key);
+}

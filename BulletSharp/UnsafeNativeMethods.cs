@@ -7770,6 +7770,12 @@ namespace BulletSharp
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern IntPtr btGetCableIndexesArray(IntPtr obj);
 
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btSoftRigidDynamicsWorld_addMapCableCollisionObjects(IntPtr world, IntPtr key, IntPtr value);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btSoftRigidDynamicsWorld_eraseMapCableCollisionObjects(IntPtr world, IntPtr key);
+           
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern bool btGetUseHydroAero(IntPtr obj);
 
