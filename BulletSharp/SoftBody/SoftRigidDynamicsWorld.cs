@@ -88,14 +88,34 @@ namespace BulletSharp.SoftBody
 			base.Dispose(disposing);
 		}
 
-		public int GetHydroNodesNumber()
+		public int GetTotalNodeCount()
 		{
-			return btGetHydroNodesNumber(Native);
+			return btGetTotalNodeCount(Native);
 		}
-		
-		public int GetActiveNodesNumber()
+
+        public int GetTotalActiveNodeCount()
+        {
+            return btGetTotalActiveNodeCount(Native);
+        }
+
+        public int GetTotalPhysicNodeCount()
+        {
+            return btGetTotalPhysicNodeCount(Native);
+        }
+
+        public int GetTotalCableCount()
+        {
+            return btGetTotalCableCount(Native);
+        }
+
+        public int GetTotalActiveCableCount()
+        {
+            return btGetTotalActiveCableCount(Native);
+        }
+
+        public int GetTotalPhysicCableCount()
 		{
-			return btGetActiveNodesNumber(Native);
+			return btGetTotalPhysicCableCount(Native);
 		}
 
 		public bool UpdateCableForces(IntPtr strc, int size)

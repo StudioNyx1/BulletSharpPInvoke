@@ -7782,12 +7782,26 @@ namespace BulletSharp
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btSetUseHydroAero(IntPtr obj, bool value);
 
-		// Total nodes number with hydro and aero
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern int btGetHydroNodesNumber(IntPtr obj);
+		public static extern int btGetTotalNodeCount(IntPtr obj);
 
-		// Total activated nodes number
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btGetTotalActiveNodeCount(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btGetTotalPhysicNodeCount(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btGetTotalCableCount(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btGetTotalActiveCableCount(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btGetTotalPhysicCableCount(IntPtr obj);
+
+        // Total activated nodes number
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern IntPtr btGetActiveNodesPos(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]

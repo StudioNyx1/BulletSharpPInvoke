@@ -92,9 +92,34 @@ int* btGetCableIndexesArray(btSoftRigidDynamicsWorld* obj)
 	return obj->getCableIndexesArray();
 }
 
-int btGetHydroNodesNumber(btSoftRigidDynamicsWorld* obj)
+int btGetTotalNodeCount(btSoftRigidDynamicsWorld* obj)
 {
-	return obj->getHydroNodesNumber();
+	return obj->getTotalNodeCount();
+}
+
+int btGetTotalActiveNodeCount(btSoftRigidDynamicsWorld* obj)
+{
+	return obj->getTotalActiveNodeCount();
+}
+
+int btGetTotalPhysicNodeCount(btSoftRigidDynamicsWorld* obj)
+{
+	return obj->getTotalPhysicNodeCount();
+}
+
+int btGetTotalCableCount(btSoftRigidDynamicsWorld* obj)
+{
+	return obj->getTotalCableCount();
+}
+
+int btGetTotalActiveCableCount(btSoftRigidDynamicsWorld* obj)
+{
+	return obj->getTotalActiveCableCount();
+}
+
+int btGetTotalPhysicCableCount(btSoftRigidDynamicsWorld* obj)
+{
+	return obj->getTotalPhysicCableCount();
 }
 
 void btSoftRigidDynamicsWorld_addMapCableCollisionObjects(btSoftRigidDynamicsWorld* world, btCollisionObject* key, btCollisionObject* value)
