@@ -675,22 +675,20 @@ void btRigidBody_removeKinematic(btRigidBody* obj, btRigidBody* toRemove)
 	}
 }
 
+void btRigidBody_setCableCollision(btRigidBody* obj, btRigidBody* cableCollision)
+{
+	obj->m_cableCollision = cableCollision;
+}
+
 void btRigidBody_setLocalTransform(btRigidBody* obj, const btTransform* transform)
 {
 	BTTRANSFORM_IN(transform);
 	obj->m_localTransform = BTTRANSFORM_USE(transform);
 }
 
-void btRigidBody_updateMassAyImpact(btRigidBody* obj, bool canChangedMassAtImpact, btScalar lowerMass, btScalar upperMass, btScalar lowerLimit, btScalar upperLimit)
+void btRigidBody_updateMassAtImpact(btRigidBody* obj, bool canChangedMassAtImpact, btScalar lowerMass, btScalar upperMass, btScalar lowerLimit, btScalar upperLimit)
 {
 	obj->updateMassAtImpact(canChangedMassAtImpact, lowerMass, upperMass, lowerLimit, upperLimit);
-}
-
-void btRigidBody_setCableCollisionObject(btRigidBody* obj, btCollisionObject* cableCollisionObject, const btTransform* cableCollisionObjectLocalTransform)
-{
-	obj->m_cableCollisionObject = cableCollisionObject;
-	BTTRANSFORM_IN(cableCollisionObjectLocalTransform);
-	obj->m_cableCollisionLocalTransform = BTTRANSFORM_USE(cableCollisionObjectLocalTransform);
 }
 
 void btRigidBody_resetInterpolationWorldTransform(btRigidBody* obj)

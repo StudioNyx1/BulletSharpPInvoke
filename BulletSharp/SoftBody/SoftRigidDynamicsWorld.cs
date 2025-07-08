@@ -147,15 +147,5 @@ namespace BulletSharp.SoftBody
 		{
 			return btGetCableIndexesArray(Native);
 		}
-		
-		public void AddMapCableCollisionObjects(CollisionObject key, CollisionObject value)
-		{
-			btSoftRigidDynamicsWorld_addMapCableCollisionObjects(Native, key.Native, value.Native);
-		}
-		
-		public void EraseMapCableCollisionObjects(CollisionObject key)
-		{
-			btSoftRigidDynamicsWorld_eraseMapCableCollisionObjects(Native, key.Native);
-		}
 	}
 }

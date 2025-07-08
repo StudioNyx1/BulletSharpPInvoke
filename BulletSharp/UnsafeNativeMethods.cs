@@ -4814,21 +4814,21 @@ namespace BulletSharp
 		public static extern void btRigidBody_setMaxAngularVelocity(IntPtr obj, double maxA);
         
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_updateMassAyImpact(IntPtr Native, bool canChangeMassAtImpacted,
+        public static extern void btRigidBody_updateMassAtImpact(IntPtr Native, bool canChangeMassAtImpacted,
             double lowerMass, double upperMass, double lowerLimit, double upperLimit);
 		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btRigidBody_setCableCollisionObject(IntPtr obj, IntPtr cableCollisionObject, [In] ref Matrix cableCollisionObjectLocalTransform);
-
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_addKinematic(IntPtr obj, IntPtr toAdd);
         		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_removeKinematic(IntPtr obj, IntPtr toRemove);
-        
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btRigidBody_setCableCollision(IntPtr obj, IntPtr cableCollision);
+
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]		
         public static extern void btRigidBody_setLocalTransform(IntPtr obj, [In] ref Matrix xform);		
 
@@ -7769,12 +7769,6 @@ namespace BulletSharp
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern IntPtr btGetCableIndexesArray(IntPtr obj);
-
-        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btSoftRigidDynamicsWorld_addMapCableCollisionObjects(IntPtr world, IntPtr key, IntPtr value);
-        
-        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btSoftRigidDynamicsWorld_eraseMapCableCollisionObjects(IntPtr world, IntPtr key);
            
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern bool btGetUseHydroAero(IntPtr obj);

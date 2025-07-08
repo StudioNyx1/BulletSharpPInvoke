@@ -293,8 +293,12 @@ namespace BulletSharp
 			btRigidBody_removeKinematic(Native, toRemove.Native);
 		}
 
+        public void SetCableCollision(RigidBody cableCollision)
+        {
+            btRigidBody_setCableCollision(Native, cableCollision.Native);
+        }
 
-		public void SetRedirectionImpulse(RigidBody receiver)
+        public void SetRedirectionImpulse(RigidBody receiver)
 		{
 			btRigidBody_setRedirectionTarget(Native, receiver.Native);
 		}
@@ -547,7 +551,7 @@ namespace BulletSharp
             double lowerMass, double upperMass,
             double lowerLimit, double upperLimit)
         {
-            btRigidBody_updateMassAyImpact(Native, canChangeMassAtImpacted,
+            btRigidBody_updateMassAtImpact(Native, canChangeMassAtImpacted,
                 lowerMass, upperMass,
                 lowerLimit, upperLimit);
         }
@@ -556,11 +560,6 @@ namespace BulletSharp
         {
             btRigidBody_resetInterpolationWorldTransform(Native);
         }
-
-		public void SetCableCollisionObject(CollisionObject cableCollisionObject, Matrix cableCollisionObjectLocalTransform)
-        {
-			btRigidBody_setCableCollisionObject(Native, cableCollisionObject.Native, ref cableCollisionObjectLocalTransform);
-		}
     }
 
 	[StructLayout(LayoutKind.Sequential)]
