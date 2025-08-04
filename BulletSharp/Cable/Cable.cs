@@ -74,7 +74,8 @@ namespace BulletSharp.SoftBody
 
         public CableData GetCableData()
         {
-            return btCable_getCableData(Native);
+			IntPtr ptr = btCable_getCableData(Native);
+            return Marshal.PtrToStructure<CableData>(ptr);
         }
 
         public void SetCableRadius(float radius)
@@ -314,7 +315,15 @@ namespace BulletSharp.SoftBody
 			public int endIndex;
 		};
 
-		public enum CableState
+        [StructLayout(LayoutKind.Sequential)]
+        public struct NodePos
+        {
+            public double x;
+            public double y;
+            public double z;
+        };
+
+        public enum CableState
 		{
 			Valid = 0,
 			InternalForcesError = 1,

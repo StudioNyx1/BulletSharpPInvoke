@@ -7630,7 +7630,10 @@ namespace BulletSharp
 		public static extern double btCable_getLength(IntPtr cable);
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern Cable.CableData btCable_getCableData(IntPtr cable);
+        public static unsafe extern IntPtr btCable_getCableData(IntPtr cable);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static unsafe extern IntPtr btCable_getNodePos(IntPtr cable);
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_setCableRadius(IntPtr cable, float radius);

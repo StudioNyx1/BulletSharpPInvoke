@@ -69,9 +69,14 @@ int btCable_getNumberOfLink(btCable* obj)
 	return obj->m_links.size();
 }
 
-btCable::CableData btCable_getCableData(btCable* obj)
+btCable::CableData* btCable_getCableData(btCable* obj)
 {
 	return obj->getCableData();
+}
+
+btCable::NodePos* btCable_getNodePos(btCable* obj)
+{
+	return obj->getNodePos();
 }
 
 btScalar btCable_getLength(btCable* obj)
