@@ -321,36 +321,44 @@ void btCable_appendNode(btSoftBody* obj, const btVector3* x, btScalar m)
 	obj->appendNode(BTVECTOR3_USE(x), m);
 }
 
-void btCable_setCollisionParameters(btCable* obj, int substepDelayCollision, int subIterationCollision, btScalar sleepingThreshold) {
-	obj->setCollisionParameters(substepDelayCollision, subIterationCollision, sleepingThreshold);
+void btCable_setCollisionParameters(btCable* obj, int substepDelaySolver, int substeDelayNarrow)
+{
+	obj->setCollisionParameters(substepDelaySolver, substeDelayNarrow);
 }
 
 
-float btCable_getCollisionMargin(btCable* obj) {
+float btCable_getCollisionMargin(btCable* obj) 
+{
 	return obj->getCollisionMargin();
 }
 
-void btCable_setCollisionMargin(btCable* obj, float collisionMargin) {
+void btCable_setCollisionMargin(btCable* obj, float collisionMargin) 
+{
 	obj->setCollisionMargin(collisionMargin);
 }
 
-void btCable_addSection(btCable* obj, btScalar rl, int start, int end, int nbNodes) {
+void btCable_addSection(btCable* obj, btScalar rl, int start, int end, int nbNodes)
+{
 	return obj->addSection( rl,  start,  end,  nbNodes);
 }
 
-void btCable_setDefaultRestLength(btCable* obj, btScalar rl) {
+void btCable_setDefaultRestLength(btCable* obj, btScalar rl)
+{
 	obj->setDefaultRestLength(rl);
 }
 
-void btCable_setMinLength(btCable* obj, btScalar value) {
+void btCable_setMinLength(btCable* obj, btScalar value)
+{
 	obj->setMinLength(value);
 }
 
-void  btCable_setWantedGrowSpeedAndDistance(btCable* obj, btScalar speed, btScalar distance) {
+void  btCable_setWantedGrowSpeedAndDistance(btCable* obj, btScalar speed, btScalar distance)
+{
 	obj->setWantedGrowSpeedAndDistance(speed,distance);
 }
 
-int btCable_getGrowingState(btCable* obj) {
+int btCable_getGrowingState(btCable* obj) 
+{
 	return obj->getGrowingState();
 }
 

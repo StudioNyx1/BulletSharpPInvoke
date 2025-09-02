@@ -342,9 +342,9 @@ namespace BulletSharp.SoftBody
         /// <param name="correctionNormal"> Additional distance add on the normal on node colllision resolution </param>
         /// <param name="safeDirectionThreshold"> Safe distance add to dectect collision</param>
         /// <param name="sleepingThreshold"> Sleeping threshold </param>
-		public void SetCollisionParameters(int substepDelayCollision = 3, int subIterationCollision= 3, double sleepingThreshold=0.0001)
+		public void SetCollisionParameters(int substepDelaySolver = 3, int substeDelayNarrow = 6)
         {
-			btCable_setCollisionParameters(Native, substepDelayCollision, subIterationCollision, sleepingThreshold);
+			btCable_setCollisionParameters(Native, substepDelaySolver, substeDelayNarrow);
 		}
 
 

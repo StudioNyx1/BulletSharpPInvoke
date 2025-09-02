@@ -7815,7 +7815,7 @@ namespace BulletSharp
 		public static extern void btCable_appendNode(IntPtr obj, [In] ref Vector3 x, double m);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setCollisionParameters(IntPtr obj, int substepDelayCollision, int subIterationCollision, double sleepingThreshold);
+		public static extern void btCable_setCollisionParameters(IntPtr obj, int substepDelaySolver, int substeDelayNarrow);
 
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
