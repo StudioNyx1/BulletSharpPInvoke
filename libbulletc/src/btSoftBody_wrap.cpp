@@ -1528,6 +1528,11 @@ void btSoftBody_Node_getQ(btSoftBody_Node* obj, btVector3* value)
 	BTVECTOR3_SET(value, obj->m_q);
 }
 
+double btSoftBody_Node_getSplineEval(btSoftBody_Node* obj)
+{
+	return obj->m_SplineEval;
+}
+
 void btSoftBody_Node_getV(btSoftBody_Node* obj, btVector3* value)
 {
 	BTVECTOR3_SET(value, obj->m_v);

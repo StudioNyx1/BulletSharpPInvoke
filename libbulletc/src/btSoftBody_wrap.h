@@ -357,6 +357,7 @@ extern "C" {
 	EXPORT btDbvtNode* btSoftBody_Node_getLeaf(btSoftBody_Node* obj);
 	EXPORT void btSoftBody_Node_getN(btSoftBody_Node* obj, btVector3* value);
 	EXPORT void btSoftBody_Node_getQ(btSoftBody_Node* obj, btVector3* value);
+	EXPORT double btSoftBody_Node_getSplineEval(btSoftBody_Node* obj);
 	EXPORT void btSoftBody_Node_getV(btSoftBody_Node* obj, btVector3* value);
 	EXPORT void btSoftBody_Node_getVN(btSoftBody_Node* obj, btVector3* value);
 	EXPORT void btSoftBody_Node_getX(btSoftBody_Node* obj, btVector3* value);

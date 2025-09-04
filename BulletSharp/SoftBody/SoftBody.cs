@@ -1732,6 +1732,14 @@ namespace BulletSharp.SoftBody
 			}
 			set => btSoftBody_Node_setQ(Native, ref value);
 		}
+		
+		public double SplineEval
+		{
+			get
+			{
+				return btSoftBody_Node_getSplineEval(Native);
+			}
+		}
 
 		public Vector3 Velocity
 		{
