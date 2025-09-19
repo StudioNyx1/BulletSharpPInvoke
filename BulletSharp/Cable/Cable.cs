@@ -10,6 +10,22 @@ namespace BulletSharp.SoftBody
     public class Cable : SoftBody
 	{
 		private CableState _cableState = CableState.Valid;
+		
+		private CollisionMode _collisionMode;
+
+		public CollisionMode CableCollisionMode
+		{
+			get
+			{
+				_collisionMode = (CollisionMode)btGetCollisionMode(Native);
+				return _collisionMode;
+			}
+			set
+			{
+				SetCollisionMode((int)value);
+				_collisionMode = value;
+			}
+		}
 
 		public Cable(SoftBodyWorldInfo worldInfo, CollisionWorld world, int nodeCount,int sectionCount, Vector3[] positions, double[] masses) :
 			 base(CreateCable(worldInfo, world, nodeCount, sectionCount, positions, masses))
@@ -323,6 +339,14 @@ namespace BulletSharp.SoftBody
             public double z;
         };
 
+        public enum CollisionMode
+        {
+	        Base,
+	        Linear,
+	        Curve,
+	        Auto
+        }
+
         public enum CableState
 		{
 			Valid = 0,
@@ -407,7 +431,7 @@ namespace BulletSharp.SoftBody
 			btCable_setCollisionResponseActive(Native, active);
 		}
 
-        public void SetCollisionMode(int mode)
+		private void SetCollisionMode(int mode)
         {
             btCable_setCollisionMode(Native, mode);
         }
