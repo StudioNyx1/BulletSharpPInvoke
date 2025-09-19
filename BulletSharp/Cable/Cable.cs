@@ -343,8 +343,7 @@ namespace BulletSharp.SoftBody
         {
 	        Base,
 	        Linear,
-	        Curve,
-	        Auto
+	        Curve
         }
 
         public enum CableState
