@@ -80,6 +80,8 @@ extern "C" {
 
 	EXPORT int btGetCableState(btCable* obj);
 
+	EXPORT int btGetCollisionMode(btCable* obj);
+
 	EXPORT void btCable_appendNode(btSoftBody* obj, const btVector3* x, btScalar m);
 
 	EXPORT void btCable_setCollisionParameters(btCable* obj, int substepDelaySolver, int substeDelayNarrow);

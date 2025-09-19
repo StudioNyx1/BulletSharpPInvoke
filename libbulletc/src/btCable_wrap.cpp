@@ -315,6 +315,11 @@ int btGetCableState(btCable* obj)
 	return obj->getCableState();
 }
 
+int btGetCollisionMode(btCable* obj)
+{
+	return obj->getCollisionMode();
+}
+
 void btCable_appendNode(btSoftBody* obj, const btVector3* x, btScalar m)
 {
 	BTVECTOR3_IN(x);
