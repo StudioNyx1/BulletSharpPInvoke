@@ -7888,6 +7888,9 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_resetNodePositions(IntPtr obj, int index, [In] Vector3 value);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCable_resetNodesAndLinks(IntPtr obj);
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_synchNodesInfos(IntPtr obj);

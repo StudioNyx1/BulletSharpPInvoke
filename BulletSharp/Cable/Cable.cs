@@ -456,6 +456,11 @@ namespace BulletSharp.SoftBody
 			btCable_resetForceAndVelocity(Native);
 		}
 
+		public void ResetNodesAndLinks()
+		{
+			btCable_resetNodesAndLinks(Native);
+		}
+
         public void ResetNodePositions(int index, Vector3 position)
         {
             btCable_resetNodePositions(Native, index, position);

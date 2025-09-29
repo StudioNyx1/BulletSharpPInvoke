@@ -417,6 +417,10 @@ void btCable_resetNodePositions(btCable* obj, const int nodeIndex, const btVecto
 	obj->ResetNodePosition(nodeIndex,position);
 }
 
+void btCable_resetNodesAndLinks(btCable* obj) {
+	obj->resetNodesAndLinks();
+}
+
 void btCable_synchNodesInfos(btCable* obj)
 {
 	obj->synchNodesInfos();

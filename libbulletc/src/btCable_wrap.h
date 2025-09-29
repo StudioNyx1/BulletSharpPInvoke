@@ -120,6 +120,8 @@ extern "C" {
 
 	EXPORT void btCable_resetNodePositions(btCable* obj, const int nodeIndex, const btVector3 position);
 
+	EXPORT void btCable_resetNodesAndLinks(btCable* obj);
+
 	EXPORT void btCable_synchNodesInfos(btCable* obj);
 
 	EXPORT void btCable_setMaxTension(btCable* obj, btScalar maxTension);
