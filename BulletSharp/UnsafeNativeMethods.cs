@@ -7854,9 +7854,6 @@ namespace BulletSharp
 		public static extern void btCable_setCollisionStiffness(IntPtr obj, double stiffnessMin, double stiffnessMax, double distMin, double distMax);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setCollisionViscosity(IntPtr obj, double coef);
-
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btCable_setCollisionResponseActive(IntPtr obj, bool active);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
