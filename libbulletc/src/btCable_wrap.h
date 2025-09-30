@@ -86,6 +86,10 @@ extern "C" {
 
 	EXPORT void btCable_setCollisionParameters(btCable* obj, int substepDelaySolver, int substeDelayNarrow);
 
+	EXPORT void btCable_setBackupInsertionThreshold(btCable* obj, btScalar threshold);
+
+	EXPORT void btCable_setAnchorBackupInsertionThreshold(btCable* obj, btScalar threshold);
+
 	EXPORT float btCable_getCollisionMargin(btCable* obj);
 
 	EXPORT void btCable_setCollisionMargin(btCable* obj, float collisionMargin);

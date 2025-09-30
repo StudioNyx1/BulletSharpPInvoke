@@ -370,6 +370,15 @@ namespace BulletSharp.SoftBody
 			btCable_setCollisionParameters(Native, substepDelaySolver, substeDelayNarrow);
 		}
 
+		public void SetBackupInsertionThreshold(float threshold)
+		{
+			btCable_setBackupInsertionThreshold(Native, threshold);
+		}
+		
+		public void SetAnchorBackupInsertionThreshold(float threshold)
+		{
+			btCable_setAnchorBackupInsertionThreshold(Native, threshold);
+		}
 
 		public void SetCollisionMargin(float collisionMargin)
 		{

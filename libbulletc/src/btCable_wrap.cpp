@@ -331,6 +331,15 @@ void btCable_setCollisionParameters(btCable* obj, int substepDelaySolver, int su
 	obj->setCollisionParameters(substepDelaySolver, substeDelayNarrow);
 }
 
+void btCable_setBackupInsertionThreshold(btCable* obj, btScalar threshold)
+{
+	obj->setBackupInsertionThreshold(threshold);
+}
+
+void btCable_setAnchorBackupInsertionThreshold(btCable* obj, btScalar threshold)
+{
+	obj->setAnchorBackupInsertionThreshold(threshold);
+}
 
 float btCable_getCollisionMargin(btCable* obj) 
 {
