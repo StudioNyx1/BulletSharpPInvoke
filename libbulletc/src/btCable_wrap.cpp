@@ -377,11 +377,6 @@ void btCable_setCollisionStiffness(btCable* obj, btScalar stiffnessMin, btScalar
 	obj->setCollisionStiffness(stiffnessMin, stiffnessMax, distMin, distMax);
 }
 
-void btCable_setCollisionViscosity(btCable* obj, btScalar coef)
-{
-	obj->setCollisionViscosity(coef);
-}
-
 void btCable_setCollisionResponseActive(btCable* obj, bool active)
 {
 	obj->setCollisionResponseActive(active);

@@ -104,8 +104,6 @@ extern "C" {
 
 	EXPORT void btCable_setCollisionStiffness(btCable* obj, btScalar stiffnessMin, btScalar stiffnessMax, btScalar distMin, btScalar distMax);
 
-	EXPORT void btCable_setCollisionViscosity(btCable* obj, btScalar coef);
-
 	EXPORT void btCable_setCollisionResponseActive(btCable* obj, bool active);
 
 	EXPORT void btCable_setCollisionMode(btCable* obj, int mode);
