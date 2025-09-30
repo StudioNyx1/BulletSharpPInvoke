@@ -7828,8 +7828,13 @@ namespace BulletSharp
 		public static extern void btCable_setAnchorBackupInsertionThreshold(IntPtr obj, float threshold);
 		
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setCollisionMargin(IntPtr obj, float collisionMargin);
+		public static extern void btCable_setCollisionBackupActivation(IntPtr obj, bool active);
 		
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setAnchorBackupActivation(IntPtr obj, bool active);
+		
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setCollisionMargin(IntPtr obj, float collisionMargin);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern float btCable_getCollisionMargin(IntPtr obj);

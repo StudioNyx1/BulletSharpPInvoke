@@ -341,6 +341,16 @@ void btCable_setAnchorBackupInsertionThreshold(btCable* obj, btScalar threshold)
 	obj->setAnchorBackupInsertionThreshold(threshold);
 }
 
+void btCable_setCollisionBackupActivation(btCable *obj, bool active)
+{
+	obj->setCollisionBackupActivation(active);
+}
+
+void btCable_setAnchorBackupActivation(btCable *obj, bool active)
+{
+	obj->setAnchorBackupActivation(active);
+}
+
 float btCable_getCollisionMargin(btCable* obj) 
 {
 	return obj->getCollisionMargin();
