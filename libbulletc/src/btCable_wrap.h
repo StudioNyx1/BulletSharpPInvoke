@@ -130,6 +130,8 @@ extern "C" {
 
 	EXPORT void btCable_synchNodesInfos(btCable* obj);
 
+	EXPORT void btCable_updateNodesMass(btCable* obj);
+
 	EXPORT void btCable_setMaxTension(btCable* obj, btScalar maxTension);
 
 #ifdef __cplusplus

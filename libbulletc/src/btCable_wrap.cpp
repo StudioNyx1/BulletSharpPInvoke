@@ -440,6 +440,10 @@ void btCable_synchNodesInfos(btCable* obj)
 	obj->synchNodesInfos();
 }
 
+void btCable_updateNodesMass(btCable* obj) {
+	obj->updateNodesMass();
+}
+
 void btCable_setMaxTension(btCable* obj, btScalar maxTension)
 {
 	obj->setMaxTension(maxTension);
