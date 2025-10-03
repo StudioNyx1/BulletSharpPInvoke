@@ -7888,8 +7888,8 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_synchNodesInfos(IntPtr obj);
-
         
-
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCable_updateNodesMass(IntPtr obj);
     }
 }

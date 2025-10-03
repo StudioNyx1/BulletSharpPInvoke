@@ -460,5 +460,10 @@ namespace BulletSharp.SoftBody
         {
             btCable_synchNodesInfos(Native);
         }
+
+        public void UpdateNodesMass()
+        {
+	        btCable_updateNodesMass(Native);
+        }
     }
 }
