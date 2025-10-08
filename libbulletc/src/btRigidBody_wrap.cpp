@@ -600,6 +600,7 @@ void btRigidBody_setMassProps(btRigidBody* obj, btScalar mass, const btVector3* 
 {
 	BTVECTOR3_IN(inertia);
 	obj->setMassProps(mass, BTVECTOR3_USE(inertia));
+	obj->setLowerLimitMassImpact(mass);
 }
 
 void btRigidBody_setMotionState(btRigidBody* obj, btMotionState* motionState)
