@@ -30,8 +30,25 @@ void btCable_removeAnchorAt(btCable* obj, int index)
 {
 	int idxNode = obj->m_anchors[index].m_node->index;
 
+	// find elems to erase
+	btRigidBody* rb = obj->m_anchors[index].m_body;
+	int idxElem = 0;
+	for (int idxLoop = 0; idxLoop < rb->m_anchorsCount; ++idxLoop)
+	{
+		idxElem = rb->m_anchorsLocal[idxLoop].distance2(obj->m_anchors[index].m_local) > FLT_EPSILON ? idxLoop : idxElem;
+	}
+
+	rb->m_anchorsCount = max(0, rb->m_anchorsCount - 1);
+	if (rb->m_anchorsCount > 0)
+	{
+		std::swap(rb->m_anchorsImpulse[idxElem], rb->m_anchorsImpulse[rb->m_anchorsCount]);
+		rb->m_anchorsImpulse.pop_back();
+
+		std::swap(rb->m_anchorsLocal[idxElem], rb->m_anchorsLocal[rb->m_anchorsCount]);
+		rb->m_anchorsLocal.pop_back();
+	}
+
 	// Update rigidbody count and clamp count to avoid divergence
-	obj->m_anchors[index].m_body->m_anchorsCount = max(0, obj->m_anchors[index].m_body->m_anchorsCount - 1);
 	obj->m_collisionDisabledObjects.remove(obj->m_anchors[index].m_body);
 	obj->m_anchors.removeAtIndex(index);
 
