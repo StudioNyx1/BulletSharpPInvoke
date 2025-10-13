@@ -90,6 +90,10 @@ extern "C" {
 
 	EXPORT void btCable_setAnchorBackupInsertionThreshold(btCable* obj, btScalar threshold);
 
+	EXPORT void btCable_setAnchorBackupMass(btCable* obj, btScalar mass);
+
+	EXPORT void btCable_setAnchorBackupSpacing(btCable* obj, btScalar spacing);
+
 	EXPORT void btCable_setCollisionBackupActivation(btCable* obj, bool active);
 	
 	EXPORT void btCable_setAnchorBackupActivation(btCable* obj, bool active);

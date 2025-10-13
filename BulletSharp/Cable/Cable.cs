@@ -380,6 +380,16 @@ namespace BulletSharp.SoftBody
 			btCable_setAnchorBackupInsertionThreshold(Native, threshold);
 		}
 
+		public void SetAnchorBackupMass(float mass)
+		{
+			btCable_setAnchorBackupMass(Native, mass);
+		}
+
+		public void SetAnchorBackupSpacing(float spacing)
+		{
+			btCable_setAnchorBackupSpacing(Native, spacing);
+		}
+
 		public void SetCollisionBackupActivation(bool active)
 		{
 			btCable_setCollisionBackupActivation(Native, active);
