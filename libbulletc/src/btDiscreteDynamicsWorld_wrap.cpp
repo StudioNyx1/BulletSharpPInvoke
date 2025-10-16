@@ -14,6 +14,16 @@ btDiscreteDynamicsWorld* btDiscreteDynamicsWorld_new(btDispatcher* dispatcher, b
 	return new btDiscreteDynamicsWorld(dispatcher, pairCache, constraintSolver, collisionConfiguration);
 }
 
+void btDiscreteDynamicsWorld_setUseHydroAsImpulsePrior(btDiscreteDynamicsWorld* obj, bool forcesAsImpulse)
+{
+	obj->setUseHydroAsImpulsePrior(forcesAsImpulse);
+}
+
+void btDiscreteDynamicsWorld_setUseHydroAsImpulseFirstStep(btDiscreteDynamicsWorld* obj, bool forcesAsImpulse)
+{
+	obj->setUseHydroAsImpulseFirstStep(forcesAsImpulse);
+}
+
 void btDiscreteDynamicsWorld_applyGravity(btDiscreteDynamicsWorld* obj)
 {
 	obj->applyGravity();

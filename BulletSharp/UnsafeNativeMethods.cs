@@ -2189,6 +2189,10 @@ namespace BulletSharp
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern IntPtr btDiscreteDynamicsWorld_new(IntPtr dispatcher, IntPtr pairCache, IntPtr constraintSolver, IntPtr collisionConfiguration);
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btDiscreteDynamicsWorld_setUseHydroAsImpulsePrior(IntPtr obj, bool forceAsImpulse);
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btDiscreteDynamicsWorld_setUseHydroAsImpulseFirstStep(IntPtr obj, bool forceAsImpulse);
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btDiscreteDynamicsWorld_applyGravity(IntPtr obj);
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btDiscreteDynamicsWorld_debugDrawConstraint(IntPtr obj, IntPtr constraint);

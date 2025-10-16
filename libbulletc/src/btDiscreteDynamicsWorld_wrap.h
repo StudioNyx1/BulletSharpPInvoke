@@ -5,6 +5,8 @@ extern "C" {
 #endif
 	EXPORT btDiscreteDynamicsWorld* btDiscreteDynamicsWorld_new(btDispatcher* dispatcher, btBroadphaseInterface* pairCache, btConstraintSolver* constraintSolver, btCollisionConfiguration* collisionConfiguration);
 	EXPORT void btDiscreteDynamicsWorld_applyGravity(btDiscreteDynamicsWorld* obj);
+	EXPORT void btDiscreteDynamicsWorld_setUseHydroAsImpulsePrior(btDiscreteDynamicsWorld* obj, bool forcesAsImpulse);
+	EXPORT void btDiscreteDynamicsWorld_setUseHydroAsImpulseFirstStep(btDiscreteDynamicsWorld* obj, bool forcesAsImpulse);
 	EXPORT void btDiscreteDynamicsWorld_debugDrawConstraint(btDiscreteDynamicsWorld* obj, btTypedConstraint* constraint);
 	EXPORT bool btDiscreteDynamicsWorld_getApplySpeculativeContactRestitution(btDiscreteDynamicsWorld* obj);
 	EXPORT btCollisionWorld* btDiscreteDynamicsWorld_getCollisionWorld(btDiscreteDynamicsWorld* obj);

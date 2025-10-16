@@ -24,6 +24,16 @@ namespace BulletSharp
 			InitializeMembers(dispatcher, pairCache, constraintSolver);
 		}
 
+		public void UseHydroAsImpulsePrior(bool state)
+		{
+			btDiscreteDynamicsWorld_setUseHydroAsImpulsePrior(Native, state);
+		}
+		
+		public void UseHydroAsImpulseFirstStep(bool state)
+		{
+			btDiscreteDynamicsWorld_setUseHydroAsImpulseFirstStep(Native, state);
+		}
+
 		public void ApplyGravity()
 		{
 			btDiscreteDynamicsWorld_applyGravity(Native);
