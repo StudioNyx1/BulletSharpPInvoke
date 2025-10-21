@@ -57,6 +57,11 @@ namespace BulletSharp.SoftBody
         {
 	        btCable_getTensionAt(Native, index, out impulse);
 		}
+		
+		public void GetLocalAnchorWithNode(int indexNode, out Vector3 local)
+		{
+			btCable_getLocalAnchorWithNode(Native, indexNode, out local);
+		}
         
 	    public int GetNumberOfNode()
         {
@@ -204,7 +209,7 @@ namespace BulletSharp.SoftBody
 		{
 			btCable_Anchor_SetNode(Native, indexAnchor, indexNode);
 		}
-
+		
 		public int Link_GetNode0(int index)
         {
 			return btCable_Link_GetNode0(Native, index);

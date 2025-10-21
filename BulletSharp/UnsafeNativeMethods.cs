@@ -7618,6 +7618,9 @@ namespace BulletSharp
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btCable_getTensionAt(IntPtr cable, int index, out Vector3 impulse);
+		
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_getLocalAnchorWithNode(IntPtr cable, int indexNode, out Vector3 local);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern int btCable_getNumberOfNode(IntPtr cable);

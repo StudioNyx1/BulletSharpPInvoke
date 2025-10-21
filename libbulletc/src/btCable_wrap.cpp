@@ -54,6 +54,11 @@ void btCable_getTensionAt(btCable* obj, int index, btVector3* impulse)
 	BTVECTOR3_SET(impulse, obj->getTensionAt(index));
 }
 
+void btCable_getLocalAnchorWithNode(btCable* obj, int indexNode, btVector3* local)
+{
+	BTVECTOR3_SET(local, obj->getLocalAnchorWithNode(indexNode));
+}
+
 int btCable_getNumberOfNode(btCable* obj)
 {
 	return obj->m_nodes.size();

@@ -13,6 +13,7 @@ extern "C" {
 	EXPORT void btCable_removeAnchorAt(btCable* obj, int index);
 
 	EXPORT void btCable_getTensionAt(btCable* obj, int index, btVector3* impulse);
+	EXPORT void btCable_getLocalAnchorWithNode(btCable* obj, int indexNode, btVector3* local);
 
 	EXPORT int btCable_getNumberOfNode(btCable* obj);
 	EXPORT int btCable_getNumberOfAnchor(btCable* obj);
