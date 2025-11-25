@@ -7903,5 +7903,11 @@ namespace BulletSharp
         
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_updateNodesMass(IntPtr obj);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCable_setDistanceMode(IntPtr obj, int mode);
+		
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btCable_getDistanceMode(IntPtr obj);
     }
 }
