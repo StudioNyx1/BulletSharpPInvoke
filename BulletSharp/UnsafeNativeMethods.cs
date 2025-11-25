@@ -4821,10 +4821,10 @@ namespace BulletSharp
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_addKinematic(IntPtr obj, IntPtr toAdd);
+        public static extern void btRigidBody_addChild(IntPtr obj, IntPtr toAdd);
         		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_removeKinematic(IntPtr obj, IntPtr toRemove);
+        public static extern void btRigidBody_removeChild(IntPtr obj, IntPtr toRemove);
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setCableCollision(IntPtr obj, IntPtr cableCollision);

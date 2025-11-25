@@ -283,14 +283,14 @@ namespace BulletSharp
 			return btRigidBody_wantsSleeping(Native);
 		}
 
-		public void AddKinematic(RigidBody toAdd)
+		public void AddChild(RigidBody toAdd)
 		{
-			btRigidBody_addKinematic(Native, toAdd.Native);
+			btRigidBody_addChild(Native, toAdd.Native);
 		}
 
-		public void RemoveKinematic(RigidBody toRemove)
+		public void RemoveChild(RigidBody toRemove)
 		{
-			btRigidBody_removeKinematic(Native, toRemove.Native);
+			btRigidBody_removeChild(Native, toRemove.Native);
 		}
 
         public void SetCableCollision(RigidBody cableCollision)

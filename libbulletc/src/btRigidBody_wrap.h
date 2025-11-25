@@ -121,8 +121,8 @@ extern "C" {
 	EXPORT void btRigidBody_setMaxLinearVelocity(btRigidBody* obj, btScalar maxL);
 	EXPORT void btRigidBody_setMaxAngularVelocity(btRigidBody* obj, btScalar maxA);
 
-	EXPORT void btRigidBody_addKinematic(btRigidBody* obj, btRigidBody* toAdd);
-	EXPORT void btRigidBody_removeKinematic(btRigidBody* obj, btRigidBody* toRemove);
+	EXPORT void btRigidBody_addChild(btRigidBody* obj, btRigidBody* toAdd);
+	EXPORT void btRigidBody_removeChild(btRigidBody* obj, btRigidBody* toRemove);
 	EXPORT void btRigidBody_setCableCollision(btRigidBody* obj, btRigidBody* cableCollision);
 	EXPORT void btRigidBody_setLocalTransform(btRigidBody* obj, const btTransform* transform);
 	EXPORT void btRigidBody_setRedirectionTarget(btRigidBody* obj, btRigidBody* target);
