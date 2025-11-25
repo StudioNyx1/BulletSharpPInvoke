@@ -22,8 +22,24 @@ namespace BulletSharp.SoftBody
 			}
 			set
 			{
-				SetCollisionMode((int)value);
+				btCable_setCollisionMode(Native, (int)value);
 				_collisionMode = value;
+			}
+		}
+		
+		private DistanceMode _distanceMode;
+
+		public DistanceMode CableDistanceMode
+		{
+			get
+			{
+				_distanceMode = (DistanceMode)btCable_getDistanceMode(Native);
+				return _distanceMode;
+			}
+			set
+			{
+				btCable_setDistanceMode(Native, (int)value);
+				_distanceMode = value;
 			}
 		}
 
@@ -344,6 +360,13 @@ namespace BulletSharp.SoftBody
             public double z;
         };
 
+        public enum DistanceMode
+        {
+	        Bullet,
+	        BulletVariant,
+	        XPBD
+        }
+        
         public enum CollisionMode
         {
 	        Base,
@@ -356,7 +379,8 @@ namespace BulletSharp.SoftBody
 			Valid = 0,
 			InternalForcesError = 1,
 			ExternalForcesError = 2
-		};
+		}
+
 		public new void AppendNode(Vector3 x, double m)
 		{
 			btCable_appendNode(Native, ref x, m);
@@ -429,11 +453,6 @@ namespace BulletSharp.SoftBody
         {
 			btCable_setCollisionResponseActive(Native, active);
 		}
-
-		private void SetCollisionMode(int mode)
-        {
-            btCable_setCollisionMode(Native, mode);
-        }
 
         public void UpdateCurveResponse(double[] dataX, double[] dataY)
         {

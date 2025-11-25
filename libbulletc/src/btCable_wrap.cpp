@@ -422,7 +422,8 @@ void btCable_synchNodesInfos(btCable* obj)
 	obj->synchNodesInfos();
 }
 
-void btCable_updateNodesMass(btCable* obj) {
+void btCable_updateNodesMass(btCable* obj)
+{
 	obj->updateNodesMass();
 }
 
@@ -431,3 +432,12 @@ void btCable_setMaxTension(btCable* obj, btScalar maxTension)
 	obj->setMaxTension(maxTension);
 }
 
+void btCable_setDistanceMode(btCable* obj, int mode)
+{
+	obj->setDistanceMode(mode);
+}
+
+int btCable_getDistanceMode(btCable* obj)
+{
+	return obj->getDistanceMode();
+}

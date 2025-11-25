@@ -125,6 +125,10 @@ extern "C" {
 
 	EXPORT void btCable_setMaxTension(btCable* obj, btScalar maxTension);
 
+	EXPORT void btCable_setDistanceMode(btCable* obj, int mode);
+
+	EXPORT int btCable_getDistanceMode(btCable* obj);
+
 #ifdef __cplusplus
 }
 #endif
