@@ -129,6 +129,8 @@ extern "C" {
 
 	EXPORT int btCable_getDistanceMode(btCable* obj);
 
+	EXPORT void btCable_AnchorPlacement_SetActive(btCable* obj, bool active);
+
 #ifdef __cplusplus
 }
 #endif

@@ -7738,6 +7738,9 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_LRA_SetInvert(IntPtr obj, bool invert);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCable_AnchorPlacement_SetActive(IntPtr obj, bool active);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern bool btCable_Bending_GetActive(IntPtr obj);
