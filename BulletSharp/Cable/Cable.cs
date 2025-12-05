@@ -363,7 +363,6 @@ namespace BulletSharp.SoftBody
         public enum DistanceMode
         {
 	        Bullet,
-	        BulletVariant,
 	        XPBD
         }
         
