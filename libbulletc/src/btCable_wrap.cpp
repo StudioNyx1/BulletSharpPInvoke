@@ -441,3 +441,8 @@ int btCable_getDistanceMode(btCable* obj)
 {
 	return obj->getDistanceMode();
 }
+
+void btCable_AnchorPlacement_SetActive(btCable* obj, bool active)
+{
+	obj->setUseAnchorConstraintPlacement(active);
+}

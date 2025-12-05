@@ -270,7 +270,12 @@ namespace BulletSharp.SoftBody
 		{
 			btCable_LRA_SetInvert(Native, invert);
 		}
-        
+
+		public void AnchorPlacement_SetActive(bool active)
+		{
+			btCable_AnchorPlacement_SetActive(Native, active);
+		}
+		
 		public bool Bending_GetActive()
         {
 			return btCable_Bending_GetActive(Native);
