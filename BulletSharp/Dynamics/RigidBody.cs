@@ -585,16 +585,17 @@ namespace BulletSharp
             btRigidBody_setMaxAngularVelocity(Native, maxL);
         }
 
-        public void UpdateMassAtImpact(bool canChangeMassAtImpacted,
-            double lowerMass, double upperMass,
-            double lowerLimit, double upperLimit)
+        public void SetupMassAtImpact(double lowerMass, double upperMass, double lowerDistanceLimit, double upperDistanceLimit)
         {
-            btRigidBody_updateMassAtImpact(Native, canChangeMassAtImpacted,
-                lowerMass, upperMass,
-                lowerLimit, upperLimit);
+            btRigidBody_setupMassAtImpact(Native, lowerMass, upperMass, lowerDistanceLimit, upperDistanceLimit);
         }
 
-        public void ResetInterpolationWorldTransform()
+		public void ActiveMassAtImpact(bool isActive)
+		{
+			btRigidBody_activeMassAtImpact(Native, isActive);
+		}
+
+		public void ResetInterpolationWorldTransform()
         {
             btRigidBody_resetInterpolationWorldTransform(Native);
         }
