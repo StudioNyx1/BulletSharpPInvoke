@@ -4814,8 +4814,8 @@ namespace BulletSharp
 		public static extern void btRigidBody_setMaxAngularVelocity(IntPtr obj, double maxA);
         
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_updateMassAtImpact(IntPtr Native, bool canChangeMassAtImpacted,
-            double lowerMass, double upperMass, double lowerLimit, double upperLimit);
+        public static extern void btRigidBody_setupMassAtImpact(IntPtr Native, double lowerMass, double upperMass, double lowerDistanceLimit, double upperDistanceLimit);
+        public static extern void btRigidBody_activeMassAtImpact(IntPtr Native, bool isActive);
 		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
