@@ -600,7 +600,6 @@ void btRigidBody_setMassProps(btRigidBody* obj, btScalar mass, const btVector3* 
 {
 	BTVECTOR3_IN(inertia);
 	obj->setMassProps(mass, BTVECTOR3_USE(inertia));
-	obj->setLowerLimitMassImpact(mass);
 }
 
 void btRigidBody_setMotionState(btRigidBody* obj, btMotionState* motionState)
@@ -695,9 +694,14 @@ void btRigidBody_setLocalTransform(btRigidBody* obj, const btTransform* transfor
 	obj->m_localTransform = BTTRANSFORM_USE(transform);
 }
 
-void btRigidBody_updateMassAtImpact(btRigidBody* obj, bool canChangedMassAtImpact, btScalar lowerMass, btScalar upperMass, btScalar lowerLimit, btScalar upperLimit)
+void btRigidBody_setupMassAtImpact(btRigidBody* obj, double lowerMass, double upperMass, double lowerDistance, double upperDistance) 
 {
-	obj->updateMassAtImpact(canChangedMassAtImpact, lowerMass, upperMass, lowerLimit, upperLimit);
+	obj->setupMassAtImpact(lowerMass, upperMass, lowerDistance, upperDistance);
+}
+
+void btRigidBody_activeMassAtImpact(btRigidBody* obj, bool isActive)
+{
+	obj->activeMassAtImpact(isActive);
 }
 
 void btRigidBody_resetInterpolationWorldTransform(btRigidBody* obj)
