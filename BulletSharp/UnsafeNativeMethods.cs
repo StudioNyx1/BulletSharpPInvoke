@@ -4809,14 +4809,12 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setMaxLinearVelocity(IntPtr obj, double maxL);
-
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btRigidBody_setMaxAngularVelocity(IntPtr obj, double maxA);
-        
+		public static extern void btRigidBody_setMaxAngularVelocity(IntPtr obj, double maxA);     
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_setupMassAtImpact(IntPtr Native, double lowerMass, double upperMass, double lowerDistanceLimit, double upperDistanceLimit);
-        public static extern void btRigidBody_activeMassAtImpact(IntPtr Native, bool isActive);
-		
+        public static extern void btRigidBody_setupMassAtImpact(IntPtr obj, double lowerMass, double upperMass, double lowerDistance, double upperDistance);
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btRigidBody_activeMassAtImpact(IntPtr obj, bool isActive);	
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
         
@@ -4830,17 +4828,13 @@ namespace BulletSharp
         public static extern IntPtr btRigidBody_getParent(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btRigidBody_addChild(IntPtr obj, IntPtr toAdd);
-        		
+        public static extern void btRigidBody_addChild(IntPtr obj, IntPtr toAdd);     		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_removeChild(IntPtr obj, IntPtr toRemove);
-
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setCableCollision(IntPtr obj, IntPtr cableCollision);
-
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]		
         public static extern void btRigidBody_setLocalTransform(IntPtr obj, [In] ref Matrix xform);		
-
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setRedirectionTarget(IntPtr obj, IntPtr target);
         
