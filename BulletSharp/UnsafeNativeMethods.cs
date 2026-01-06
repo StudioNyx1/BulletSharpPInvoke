@@ -4819,6 +4819,15 @@ namespace BulletSharp
 		
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_resetInterpolationWorldTransform(IntPtr obj);
+        
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern IntPtr btRigidBody_getChildren(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btRigidBody_getChildCount(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern IntPtr btRigidBody_getParent(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_addChild(IntPtr obj, IntPtr toAdd);

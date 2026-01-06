@@ -654,30 +654,29 @@ void btRigidBody_setMaxAngularVelocity(btRigidBody* obj, btScalar maxA)
 	obj->setMaxAngularVelocity(maxA);
 }
 
+int btRigidBody_getChildCount(btRigidBody* obj)
+{
+	return (int)obj->m_Children.size();
+}
+
+btRigidBody** btRigidBody_getChildren(btRigidBody* obj)
+{
+	return obj->m_Children.data();
+}
+
+btRigidBody* btRigidBody_getParent(btRigidBody* obj)
+{
+	return obj->m_parent;
+}
+
 void btRigidBody_addChild(btRigidBody* obj, btRigidBody* toAdd)
 {
-	// Ensure we don't add null or duplicate logic if needed
-	if (!obj || !toAdd) return;
-
-	obj->m_Children.push_back(toAdd);
-    
-	// Link the child to the parent
-	toAdd->m_parent = obj;
+	obj->addBulletChild(toAdd);
 }
 
 void btRigidBody_removeChild(btRigidBody* obj, btRigidBody* toRemove)
 {
-	for (int index = 0; index < obj->m_Children.size(); index++)
-	{
-		if (obj->m_Children[index] == toRemove) 
-		{
-			// Unlink the child from the parent
-			toRemove->m_parent = nullptr;
-
-			obj->m_Children.erase(obj->m_Children.begin() + index);
-			return;
-		}
-	}
+	obj->removeBulletChild(toRemove);
 }
 
 void btRigidBody_setRedirectionTarget(btRigidBody* obj, btRigidBody* target)

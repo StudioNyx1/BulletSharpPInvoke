@@ -22,6 +22,44 @@ namespace BulletSharp
 		private MotionState _motionState;
 		internal List<TypedConstraint> _constraintRefs;
 
+		public RigidBody Parent
+		{
+			get 
+			{
+				// 1. Pass the pointer, not the object
+				IntPtr parentPtr = btRigidBody_getParent(Native); 
+        
+				if (parentPtr == IntPtr.Zero) 
+					return null;
+				
+				return new RigidBody(parentPtr); 
+			}
+		}
+
+		public List<RigidBody> Children
+		{
+			get
+			{
+				int count = btRigidBody_getChildCount(Native);
+				if (count == 0) return new List<RigidBody>();
+
+				IntPtr arrayPtr = btRigidBody_getChildren(Native);
+				var children = new List<RigidBody>(count);
+
+				for (int i = 0; i < count; i++)
+				{
+					// Read the pointer from the C++ array
+					IntPtr childNative = Marshal.ReadIntPtr(arrayPtr, i * IntPtr.Size);
+					// Look up the managed wrapper for this native pointer
+					if (GetManaged(childNative) is RigidBody managed)
+					{
+						children.Add(managed);
+					}
+				}
+				return children;
+			}
+		}
+
 		internal RigidBody(IntPtr native)
 			: base(ConstructionInfo.Null)
 		{
