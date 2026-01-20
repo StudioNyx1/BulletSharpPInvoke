@@ -7870,16 +7870,10 @@ namespace BulletSharp
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern int btCollisionDispatcherMt_getNumManifoldsCache(IntPtr obj);
-
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern IntPtr btCollisionDispatcherMt_getManifoldsCacheByIndexInternal(IntPtr obj, int index);
 		
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern int btCollisionDispatcherMt_getNumParticlesManifolds(IntPtr obj);
-		
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern IntPtr btCollisionDispatcherMt_getParticlesManifoldsByIndexInternal(IntPtr obj, int index);
-        
+	
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern IntPtr btCable_setCollisionMode(IntPtr obj, int mode);  
         
@@ -7900,8 +7894,56 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_synchNodesInfos(IntPtr obj);
-        
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_updateNodesMass(IntPtr obj);
+
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btCable_updateNodesMass(IntPtr obj);
+        public static extern IntPtr btCollisionDispatcherMt_CustomManifold_getBody0(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btCollisionDispatcherMt_CustomManifold_getNumContacts(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern IntPtr btCollisionDispatcherMt_CustomManifold_getBody1(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_CustomManifold_getPositionWorldOnAByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_CustomManifold_getPositionWorldOnBByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_CustomManifold_getNormalWorldOnBByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern double btCollisionDispatcherMt_CustomManifold_getDistanceByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern double btCollisionDispatcherMt_CustomManifold_getAppliedImpulse(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern IntPtr btCollisionDispatcherMt_ParticlesCustomManifold_getBody0(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btCollisionDispatcherMt_ParticlesCustomManifold_getNumContacts(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern IntPtr btCollisionDispatcherMt_ParticlesCustomManifold_getBody1(IntPtr obj, [In] int manifoldIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_ParticlesCustomManifold_getPositionWorldOnAByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_ParticlesCustomManifold_getPositionWorldOnBByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCollisionDispatcherMt_ParticlesCustomManifold_getNormalWorldOnBByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex, out Vector3 value);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern double btCollisionDispatcherMt_ParticlesCustomManifold_getDistanceByIndex(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern double btCollisionDispatcherMt_ParticlesCustomManifold_getAppliedImpulse(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex);
     }
 }
