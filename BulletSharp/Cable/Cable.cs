@@ -493,5 +493,31 @@ namespace BulletSharp.SoftBody
         {
 	        btCable_updateNodesMass(Native);
         }
-    }
+
+		public double MaxAccumulator
+		{
+			get
+			{
+				return btCable_getTensionMaxAccumulator(Native);
+			}
+			set => btCable_setTensionMaxAccumulator(Native, value);
+		}
+
+		public double MinAccumulator
+		{
+			get
+			{
+				return btCable_getTensionMinAccumulator(Native);
+			}
+			set => btCable_setTensionMinAccumulator(Native, value);
+		}
+
+		public double CurrentAccumulator
+		{
+			get
+			{
+				return btCable_getTensionAccumulator(Native);
+			}
+		}
+	}
 }
