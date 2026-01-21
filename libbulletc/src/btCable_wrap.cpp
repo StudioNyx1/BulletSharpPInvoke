@@ -446,3 +446,28 @@ void btCable_AnchorPlacement_SetActive(btCable* obj, bool active)
 {
 	obj->setUseAnchorConstraintPlacement(active);
 }
+
+btScalar btCable_getTensionAccumulator(btCable* obj)
+{
+	return obj->getTensionAccumulator(); 
+}
+
+btScalar btCable_getTensionMinAccumulator(btCable* obj)
+{
+	return obj->getTensionMinAccumulator();
+}
+
+btScalar btCable_getTensionMaxAccumulator(btCable* obj) 
+{
+	return obj->getTensionMaxAccumulator(); 
+}
+
+void btCable_setTensionMinAccumulator(btCable* obj, btScalar value) 
+{
+	obj->setTensionMinAccumulator(value); 
+}
+
+void btCable_setTensionMaxAccumulator(btCable* obj, btScalar value) 
+{
+	obj->setTensionMaxAccumulator(value); 
+}

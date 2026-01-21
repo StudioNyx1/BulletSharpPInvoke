@@ -131,6 +131,16 @@ extern "C" {
 
 	EXPORT void btCable_AnchorPlacement_SetActive(btCable* obj, bool active);
 
+	EXPORT btScalar btCable_getTensionAccumulator(btCable* obj);
+
+	EXPORT btScalar btCable_getTensionMinAccumulator(btCable* obj);
+
+	EXPORT btScalar btCable_getTensionMaxAccumulator(btCable* obj);
+
+	EXPORT void btCable_setTensionMinAccumulator(btCable* obj, btScalar value);
+
+	EXPORT void btCable_setTensionMaxAccumulator(btCable* obj, btScalar value);
+
 #ifdef __cplusplus
 }
 #endif

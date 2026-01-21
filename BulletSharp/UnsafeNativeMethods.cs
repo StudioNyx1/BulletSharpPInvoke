@@ -7944,12 +7944,24 @@ namespace BulletSharp
         public static extern double btCollisionDispatcherMt_ParticlesCustomManifold_getAppliedImpulse(IntPtr obj, [In] int manifoldIndex, [In] int pointIndex);
         
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
-        public static extern void btCable_updateNodesMass(IntPtr obj);
-        
-        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_setDistanceMode(IntPtr obj, int mode);
 		
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern int btCable_getDistanceMode(IntPtr obj);
-    }
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getTensionAccumulator(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getTensionMinAccumulator(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setTensionMinAccumulator(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getTensionMaxAccumulator(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setTensionMaxAccumulator(IntPtr obj, double value);
+	}
 }
