@@ -447,30 +447,116 @@ void btCable_AnchorPlacement_SetActive(btCable* obj, bool active)
 	obj->setUseAnchorConstraintPlacement(active);
 }
 
-btScalar btCable_getTensionAccumulator(btCable* obj)
+
+//
+// Mass Balance tweaked by cable stretch
+// 
+
+btScalar btCable_getStretchRatio(btCable* obj)
 {
-	return obj->getTensionAccumulator(); 
+	return obj->getStretchRatio();
 }
 
-btScalar btCable_getTensionMinAccumulator(btCable* obj)
+btScalar btCable_getStretchRatioDamped(btCable* obj)
 {
-	return obj->getTensionMinAccumulator();
+	return obj->getStretchRatioDamped();
 }
 
-btScalar btCable_getTensionMaxAccumulator(btCable* obj) 
+btScalar btCable_getMassBalanceRatio(btCable* obj)
 {
-	return obj->getTensionMaxAccumulator(); 
+	return obj->getMassBalanceRatio();
 }
 
-void btCable_setTensionMinAccumulator(btCable* obj, btScalar value) 
+bool btCable_getIsMassBalanceEnabled(btCable* obj)
 {
-	obj->setTensionMinAccumulator(value); 
+	return obj->getIsMassBalanceEnabled();
 }
 
-void btCable_setTensionMaxAccumulator(btCable* obj, btScalar value) 
+void btCable_setStretchRatioMode(btCable* obj, int value)
 {
-	obj->setTensionMaxAccumulator(value); 
+	obj->setStretchRatioMode(value);
 }
+
+int btCable_getStretchRatioMode(btCable* obj)
+{
+	return obj->getStretchRatioMode();
+}
+
+void btCable_setStretchRatioMinThreshold(btCable* obj, btScalar value)
+{
+	obj->setStretchRatioMinThreshold(value);
+}
+
+btScalar btCable_getStretchRatioMinThreshold(btCable* obj)
+{
+	return obj->getStretchRatioMinThreshold();
+}
+
+
+void btCable_setStretchRatioMaxThreshold(btCable* obj, btScalar value)
+{
+	obj->setStretchRatioMaxThreshold(value);
+}
+
+btScalar btCable_getStretchRatioMaxThreshold(btCable* obj)
+{
+	return obj->getStretchRatioMaxThreshold();
+}
+
+
+void btCable_setStretchRatioHysteresis(btCable* obj, btScalar value)
+{
+	obj->setStretchRatioHysteresis(value);
+}
+
+btScalar btCable_getStretchRatioHysteresis(btCable* obj)
+{
+	return obj->getStretchRatioHysteresis();
+}
+
+
+void btCable_setStretchRatioDamping(btCable* obj, btScalar value)
+{
+	obj->setStretchRatioDamping(value);
+}
+
+btScalar btCable_getStretchRatioDamping(btCable* obj)
+{
+	return obj->getStretchRatioDamping();
+}
+
+void btCable_setStretchRatioCurve(btCable* obj, int value)
+{
+	obj->setStretchRatioCurve(value);
+}
+
+int btCable_getStretchRatioCurve(btCable* obj)
+{
+	return obj->getStretchRatioCurve();
+}
+
+
+void btCable_setStretchRatioHysteresisThreshold(btCable* obj, btScalar value)
+{
+	return obj->setStretchRatioHysteresisThreshold(value);
+}
+
+btScalar btCable_getStretchRatioHysteresisThreshold(btCable* obj)
+{
+	return obj->getStretchRatioHysteresisThreshold();
+}
+
+
+void btCable_setStretchRatioDampingThreshold(btCable* obj, btScalar value)
+{
+	obj->setStretchRatioDampingThreshold(value);
+}
+
+btScalar btCable_getStretchRatioDampingThreshold(btCable* obj)
+{
+	return obj->getStretchRatioDampingThreshold();
+}
+
 
 int btCable_getAnchorMode(btCable* obj)
 {

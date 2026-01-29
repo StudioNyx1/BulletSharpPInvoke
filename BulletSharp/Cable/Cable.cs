@@ -43,6 +43,7 @@ namespace BulletSharp.SoftBody
 			}
 		}
 
+
 		public Cable(SoftBodyWorldInfo worldInfo, CollisionWorld world, int nodeCount,int sectionCount, Vector3[] positions, double[] masses) :
 			 base(CreateCable(worldInfo, world, nodeCount, sectionCount, positions, masses))
 		{
@@ -386,7 +387,23 @@ namespace BulletSharp.SoftBody
 	        Curve
         }
 
-        public enum CableState
+		public enum StretchRatioMode
+		{
+			Cable = 0,  // Tension ratio is computed based on the whole cable length
+			Link,       // Tension ration is computed based on the more stretched link
+			None        // Assume mass ratio is always needed at max
+		};
+
+		public enum StretchRatioCurve
+		{
+			Linear = 0,     
+			Quadratic,      
+			QuadraticInverse,
+			Quartic,
+			QuarticInverse
+		};
+
+		public enum CableState
 		{
 			Valid = 0,
 			InternalForcesError = 1,
@@ -502,30 +519,111 @@ namespace BulletSharp.SoftBody
 	        btCable_updateNodesMass(Native);
         }
 
-		public double MaxAccumulator
+		//
+		// Mass Balance tweaked by cable stretch
+		//
+
+		public double StretchRatio
 		{
 			get
 			{
-				return btCable_getTensionMaxAccumulator(Native);
+				return btCable_getStretchRatio(Native);
 			}
-			set => btCable_setTensionMaxAccumulator(Native, value);
 		}
 
-		public double MinAccumulator
+		public double StretchRatioDamped
 		{
 			get
 			{
-				return btCable_getTensionMinAccumulator(Native);
+				return btCable_getStretchRatioDamped(Native);
 			}
-			set => btCable_setTensionMinAccumulator(Native, value);
 		}
 
-		public double CurrentAccumulator
+		public double MassBalanceRatio
 		{
 			get
 			{
-				return btCable_getTensionAccumulator(Native);
+				return btCable_getMassBalanceRatio(Native);
 			}
+		}
+
+		public bool IsMassBalanceEnabled
+		{
+			get
+			{
+				return btCable_getIsMassBalanceEnabled(Native);
+			}
+		}
+
+		public StretchRatioMode StretchRatioDetectionMode
+		{
+			get
+			{
+				return (StretchRatioMode)btCable_getStretchRatioMode(Native);
+			}
+			set => btCable_setStretchRatioMode(Native, (int)value);
+		}
+
+		public StretchRatioCurve StretchRatioDetectionCurve
+		{
+			get
+			{
+				return (StretchRatioCurve)btCable_getStretchRatioCurve(Native);
+			}
+			set => btCable_setStretchRatioCurve(Native, (int)value);
+		}
+
+		public double StretchRatioMaxThreshold
+		{
+			get
+			{
+				return btCable_getStretchRatioMaxThreshold(Native);
+			}
+			set => btCable_setStretchRatioMaxThreshold(Native, value);
+		}
+
+		public double StretchRatioMinThreshold
+		{
+			get
+			{
+				return btCable_getStretchRatioMinThreshold(Native);
+			}
+			set => btCable_setStretchRatioMinThreshold(Native, value);
+		}
+
+		public double StretchRatioHysteresis
+		{
+			get
+			{
+				return btCable_getStretchRatioHysteresis(Native);
+			}
+			set => btCable_setStretchRatioHysteresis(Native, value);
+		}
+		public double StretchRatioHysteresisThreshold
+		{
+			get
+			{
+				return btCable_getStretchRatioHysteresisThreshold(Native);
+			}
+			set => btCable_setStretchRatioHysteresisThreshold(Native, value);
+		}
+
+		public double StretchRatioDamping
+		{
+			get
+			{
+				return btCable_getStretchRatioDamping(Native);
+			}
+			set => btCable_setStretchRatioDamping(Native, value);
+		}
+
+		public double StretchRatioDampingThreshold
+		{
+			get
+			{
+				return btCable_getStretchRatioDampingThreshold(Native);
+			}
+			set => btCable_setStretchRatioDampingThreshold(Native, value);
 		}
 
 		public AnchorMode CurrentAnchorMode

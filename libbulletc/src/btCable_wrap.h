@@ -131,15 +131,38 @@ extern "C" {
 
 	EXPORT void btCable_AnchorPlacement_SetActive(btCable* obj, bool active);
 
-	EXPORT btScalar btCable_getTensionAccumulator(btCable* obj);
+	//
+	// Mass Balance tweaked by cable stretch
+	// 
 
-	EXPORT btScalar btCable_getTensionMinAccumulator(btCable* obj);
+	EXPORT btScalar btCable_getStretchRatio(btCable* obj);
+	EXPORT btScalar btCable_getStretchRatioDamped(btCable* obj);
+	EXPORT btScalar btCable_getMassBalanceRatio(btCable* obj);
+	EXPORT bool btCable_getIsMassBalanceEnabled(btCable* obj);
 
-	EXPORT btScalar btCable_getTensionMaxAccumulator(btCable* obj);
+	EXPORT void btCable_setStretchRatioMode(btCable* obj, int value);
+	EXPORT int btCable_getStretchRatioMode(btCable* obj);
 
-	EXPORT void btCable_setTensionMinAccumulator(btCable* obj, btScalar value);
+	EXPORT void btCable_setStretchRatioCurve(btCable* obj, int value);
+	EXPORT int btCable_getStretchRatioCurve(btCable* obj);
 
-	EXPORT void btCable_setTensionMaxAccumulator(btCable* obj, btScalar value);
+	EXPORT void btCable_setStretchRatioMinThreshold(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioMinThreshold(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioMaxThreshold(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioMaxThreshold(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioHysteresis(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioHysteresis(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioDamping(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioDamping(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioHysteresisThreshold(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioHysteresisThreshold(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioDampingThreshold(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioDampingThreshold(btCable* obj);
 
 	EXPORT int btCable_getAnchorMode(btCable* obj);
 	EXPORT void btCable_setAnchorMode(btCable* obj, int mode);

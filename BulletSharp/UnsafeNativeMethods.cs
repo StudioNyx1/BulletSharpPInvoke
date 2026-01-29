@@ -7949,22 +7949,74 @@ namespace BulletSharp
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern int btCable_getDistanceMode(IntPtr obj);
 
-		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern double btCable_getTensionAccumulator(IntPtr obj);
+		//
+		// Mass Balance tweaked by cable stretch
+		// 
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern double btCable_getTensionMinAccumulator(IntPtr obj);
+		public static extern double btCable_getStretchRatio(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setTensionMinAccumulator(IntPtr obj, double value);
+		public static extern double btCable_getStretchRatioDamped(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern double btCable_getTensionMaxAccumulator(IntPtr obj);
+		public static extern double btCable_getMassBalanceRatio(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setTensionMaxAccumulator(IntPtr obj, double value);
-		
+		public static extern bool btCable_getIsMassBalanceEnabled(IntPtr obj);
+
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern int btCable_getStretchRatioMode(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioMode(IntPtr obj, int value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern int btCable_getStretchRatioCurve(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioCurve(IntPtr obj, int value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioMinThreshold(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioMinThreshold(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioMaxThreshold(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioMaxThreshold(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioHysteresis(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioHysteresis(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioHysteresisThreshold(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioHysteresisThreshold(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioDamping(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioDamping(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioDampingThreshold(IntPtr obj, double value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioDampingThreshold(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btCable_getAnchorMode(IntPtr obj);
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_setAnchorMode(IntPtr obj, int mode);
 	}
 }
