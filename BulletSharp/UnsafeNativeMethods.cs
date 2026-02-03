@@ -7963,5 +7963,8 @@ namespace BulletSharp
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern void btCable_setTensionMaxAccumulator(IntPtr obj, double value);
+		
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btCable_setAnchorMode(IntPtr obj, int mode);
 	}
 }

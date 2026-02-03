@@ -471,3 +471,13 @@ void btCable_setTensionMaxAccumulator(btCable* obj, btScalar value)
 {
 	obj->setTensionMaxAccumulator(value); 
 }
+
+int btCable_getAnchorMode(btCable* obj)
+{
+	return obj->getAnchorMode();
+}
+
+void btCable_setAnchorMode(btCable* obj, int mode)
+{
+	obj->setAnchorMode(mode);
+}

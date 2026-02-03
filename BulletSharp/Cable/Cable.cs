@@ -371,6 +371,14 @@ namespace BulletSharp.SoftBody
 	        XPBD
         }
         
+        public enum AnchorMode
+        {
+	        Bullet = 0, 
+	        MassBalance,
+	        LerpB2MB,
+	        OnPoint
+        }
+        
         public enum CollisionMode
         {
 	        Base,
@@ -518,6 +526,15 @@ namespace BulletSharp.SoftBody
 			{
 				return btCable_getTensionAccumulator(Native);
 			}
+		}
+
+		public AnchorMode CurrentAnchorMode
+		{
+			get
+			{
+				return (AnchorMode) btCable_getAnchorMode(Native);
+			}
+			set => btCable_setAnchorMode(Native, (int) value);
 		}
 	}
 }
