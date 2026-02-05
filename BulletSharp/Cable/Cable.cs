@@ -368,16 +368,16 @@ namespace BulletSharp.SoftBody
 
         public enum DistanceMode
         {
-	        Bullet,
-	        XPBD
+            PBD = 0, // Original distance constraint (Original)
+            XPBD // Modified distance constraint
         }
         
         public enum AnchorMode
         {
-	        Bullet = 0, 
-	        MassBalance,
-	        LerpB2MB,
-	        OnPoint
+            Original = 0, // Original position in anchor constraint from Bullet
+            MassBalance, // Modified position in anchor constraint from Bullet with the Impulse Matrix MassBalance
+            Interpolation, // Modified position in anchor constraint lerping between the original method and the MassBalance one
+            Teleportation // Modified position in anchor constraint with teleportation on the anchor position
         }
         
         public enum CollisionMode
