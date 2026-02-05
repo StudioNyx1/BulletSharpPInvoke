@@ -63,7 +63,7 @@ double btCollisionDispatcherMt_CustomManifold_getAppliedImpulse(btCollisionDispa
 
 const btCollisionObject* btCollisionDispatcherMt_ParticlesCustomManifold_getBody0(btCollisionDispatcherMt* obj, int manifoldIndex)
 {
-	return obj->getManifoldsCacheByIndexInternal(manifoldIndex)->getBody0();
+	return obj->getParticlesManifoldsByIndexInternal(manifoldIndex)->getBody0();
 }
 
 const btCollisionObject* btCollisionDispatcherMt_ParticlesCustomManifold_getBody1(btCollisionDispatcherMt* obj, int manifoldIndex)
