@@ -694,6 +694,11 @@ void btRigidBody_setLocalTransform(btRigidBody* obj, const btTransform* transfor
 	obj->m_localTransform = BTTRANSFORM_USE(transform);
 }
 
+void btRigidBody_getLocalTransform(btRigidBody* obj, btTransform* transform)
+{
+	BTTRANSFORM_SET(transform, obj->m_localTransform);
+}
+
 void btRigidBody_setupMassAtImpact(btRigidBody* obj, double lowerMass, double upperMass, double lowerDistance, double upperDistance) 
 {
 	obj->setupMassAtImpact(lowerMass, upperMass, lowerDistance, upperDistance);

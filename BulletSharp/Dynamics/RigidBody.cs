@@ -346,7 +346,17 @@ namespace BulletSharp
 			btRigidBody_setLocalTransform(Native, ref localTransform);
 		}
 
-		public Vector3 AngularDamping
+        public Matrix LocalTransform
+        {
+            get
+            {
+                Matrix value;
+                btRigidBody_getLocalTransform(Native, out value);
+                return value;
+            }
+        }
+
+        public Vector3 AngularDamping
 		{
 			get
 			{

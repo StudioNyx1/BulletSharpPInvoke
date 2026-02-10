@@ -4834,7 +4834,9 @@ namespace BulletSharp
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setCableCollision(IntPtr obj, IntPtr cableCollision);
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]		
-        public static extern void btRigidBody_setLocalTransform(IntPtr obj, [In] ref Matrix xform);		
+        public static extern void btRigidBody_setLocalTransform(IntPtr obj, [In] ref Matrix xform);
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern void btRigidBody_getLocalTransform(IntPtr obj, out Matrix value);
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btRigidBody_setRedirectionTarget(IntPtr obj, IntPtr target);
         
