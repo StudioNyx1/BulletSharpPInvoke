@@ -567,3 +567,10 @@ void btCable_setAnchorMode(btCable* obj, int mode)
 {
 	obj->setAnchorMode(mode);
 }
+
+int btCable_getLastNodeData(btCable* obj, btVector3* position)
+{
+	int lastIndex = obj->m_nodes.size() - 1;
+	BTVECTOR3_SET(position, obj->m_nodes[lastIndex].m_x);
+	return lastIndex;
+}

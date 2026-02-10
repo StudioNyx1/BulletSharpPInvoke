@@ -634,5 +634,10 @@ namespace BulletSharp.SoftBody
 			}
 			set => btCable_setAnchorMode(Native, (int) value);
 		}
+
+		public int GetLastNodeData(out Vector3 position)
+		{
+            return btCable_getLastNodeData(Native, out position);
+        }
 	}
 }

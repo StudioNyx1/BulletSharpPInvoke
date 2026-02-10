@@ -8018,5 +8018,8 @@ namespace BulletSharp
 
         [DllImport(Native.Dll, CallingConvention = Native.Conv)]
         public static extern void btCable_setAnchorMode(IntPtr obj, int mode);
-	}
+
+        [DllImport(Native.Dll, CallingConvention = Native.Conv)]
+        public static extern int btCable_getLastNodeData(IntPtr obj, out Vector3 position);
+    }
 }
