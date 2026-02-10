@@ -525,16 +525,35 @@ btScalar btCable_getStretchRatioDamping(btCable* obj)
 	return obj->getStretchRatioDamping();
 }
 
-void btCable_setStretchRatioCurve(btCable* obj, int value)
+void btCable_setStretchRatioLowSpeedCurve(btCable* obj, int value)
 {
-	obj->setStretchRatioCurve(value);
+	obj->setStretchRatioLowSpeedCurve(value);
 }
 
-int btCable_getStretchRatioCurve(btCable* obj)
+int btCable_getStretchRatioLowSpeedCurve(btCable* obj)
 {
-	return obj->getStretchRatioCurve();
+	return obj->getStretchRatioLowSpeedCurve();
 }
 
+void btCable_setStretchRatioHighSpeedCurve(btCable* obj, int value)
+{
+	obj->setStretchRatioHighSpeedCurve(value);
+}
+
+int btCable_getStretchRatioHighSpeedCurve(btCable* obj)
+{
+	return obj->getStretchRatioHighSpeedCurve();
+}
+
+void btCable_setStretchRatioSpeedThreshold(btCable* obj, btScalar value)
+{
+	return obj->setStretchRatioSpeedThreshold(value);
+}
+
+btScalar btCable_getStretchRatioSpeedThreshold(btCable* obj)
+{
+	return obj->getStretchRatioSpeedThreshold();
+}
 
 void btCable_setStretchRatioHysteresisThreshold(btCable* obj, btScalar value)
 {

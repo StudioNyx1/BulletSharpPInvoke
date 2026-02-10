@@ -7972,10 +7972,22 @@ namespace BulletSharp
 		public static extern void btCable_setStretchRatioMode(IntPtr obj, int value);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern int btCable_getStretchRatioCurve(IntPtr obj);
+		public static extern int btCable_getStretchRatioLowSpeedCurve(IntPtr obj);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
-		public static extern void btCable_setStretchRatioCurve(IntPtr obj, int value);
+		public static extern void btCable_setStretchRatioLowSpeedCurve(IntPtr obj, int value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern int btCable_getStretchRatioHighSpeedCurve(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioHighSpeedCurve(IntPtr obj, int value);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern double btCable_getStretchRatioSpeedThreshold(IntPtr obj);
+
+		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
+		public static extern void btCable_setStretchRatioSpeedThreshold(IntPtr obj, double value);
 
 		[DllImport(Native.Dll, CallingConvention = Native.Conv)]
 		public static extern double btCable_getStretchRatioMinThreshold(IntPtr obj);

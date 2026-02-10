@@ -146,6 +146,15 @@ extern "C" {
 	EXPORT void btCable_setStretchRatioCurve(btCable* obj, int value);
 	EXPORT int btCable_getStretchRatioCurve(btCable* obj);
 
+	EXPORT void btCable_setStretchRatioLowSpeedCurve(btCable* obj, int value);
+	EXPORT int btCable_getStretchRatioLowSpeedCurve(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioHighSpeedCurve(btCable* obj, int value);
+	EXPORT int btCable_getStretchRatioHighSpeedCurve(btCable* obj);
+
+	EXPORT void btCable_setStretchRatioSpeedThreshold(btCable* obj, btScalar value);
+	EXPORT btScalar btCable_getStretchRatioSpeedThreshold(btCable* obj);
+
 	EXPORT void btCable_setStretchRatioMinThreshold(btCable* obj, btScalar value);
 	EXPORT btScalar btCable_getStretchRatioMinThreshold(btCable* obj);
 

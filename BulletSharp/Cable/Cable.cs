@@ -556,13 +556,31 @@ namespace BulletSharp.SoftBody
 			set => btCable_setStretchRatioMode(Native, (int)value);
 		}
 
-		public StretchRatioCurve StretchRatioDetectionCurve
+		public StretchRatioCurve StretchRatioLowSpeedCurve
 		{
 			get
 			{
-				return (StretchRatioCurve)btCable_getStretchRatioCurve(Native);
+				return (StretchRatioCurve)btCable_getStretchRatioLowSpeedCurve(Native);
 			}
-			set => btCable_setStretchRatioCurve(Native, (int)value);
+			set => btCable_setStretchRatioLowSpeedCurve(Native, (int)value);
+		}
+
+		public StretchRatioCurve StretchRatioHighSpeedCurve
+		{
+			get
+			{
+				return (StretchRatioCurve)btCable_getStretchRatioHighSpeedCurve(Native);
+			}
+			set => btCable_setStretchRatioHighSpeedCurve(Native, (int)value);
+		}
+
+		public double StretchRatioSpeedThreshold
+		{
+			get
+			{
+				return btCable_getStretchRatioSpeedThreshold(Native);
+			}
+			set => btCable_setStretchRatioSpeedThreshold(Native, value);
 		}
 
 		public double StretchRatioMaxThreshold
