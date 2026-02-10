@@ -557,17 +557,6 @@ btScalar btCable_getStretchRatioDampingThreshold(btCable* obj)
 	return obj->getStretchRatioDampingThreshold();
 }
 
-
-int btCable_getAnchorMode(btCable* obj)
-{
-	return obj->getAnchorMode();
-}
-
-void btCable_setAnchorMode(btCable* obj, int mode)
-{
-	obj->setAnchorMode(mode);
-}
-
 int btCable_getLastNodeData(btCable* obj, btVector3* position)
 {
 	int lastIndex = obj->m_nodes.size() - 1;

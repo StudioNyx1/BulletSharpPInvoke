@@ -372,14 +372,6 @@ namespace BulletSharp.SoftBody
             XPBD // Modified distance constraint
         }
         
-        public enum AnchorMode
-        {
-            Original = 0, // Original position in anchor constraint from Bullet
-            MassBalance, // Modified position in anchor constraint from Bullet with the Impulse Matrix MassBalance
-            Interpolation, // Modified position in anchor constraint lerping between the original method and the MassBalance one
-            Teleportation // Modified position in anchor constraint with teleportation on the anchor position
-        }
-        
         public enum CollisionMode
         {
 	        Base,
@@ -624,15 +616,6 @@ namespace BulletSharp.SoftBody
 				return btCable_getStretchRatioDampingThreshold(Native);
 			}
 			set => btCable_setStretchRatioDampingThreshold(Native, value);
-		}
-
-		public AnchorMode CurrentAnchorMode
-		{
-			get
-			{
-				return (AnchorMode) btCable_getAnchorMode(Native);
-			}
-			set => btCable_setAnchorMode(Native, (int) value);
 		}
 
 		public int GetLastNodeData(out Vector3 position)

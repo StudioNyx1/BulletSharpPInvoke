@@ -164,9 +164,6 @@ extern "C" {
 	EXPORT void btCable_setStretchRatioDampingThreshold(btCable* obj, btScalar value);
 	EXPORT btScalar btCable_getStretchRatioDampingThreshold(btCable* obj);
 
-	EXPORT int btCable_getAnchorMode(btCable* obj);
-	EXPORT void btCable_setAnchorMode(btCable* obj, int mode);
-
 	EXPORT int btCable_getLastNodeData(btCable* obj, btVector3* position);
 
 #ifdef __cplusplus
