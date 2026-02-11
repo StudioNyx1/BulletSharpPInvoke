@@ -381,10 +381,10 @@ namespace BulletSharp.SoftBody
 
 		public enum StretchRatioMode
 		{
-			Cable = 0,  // Tension ratio is computed based on the whole cable length (same across anchors)
-			Link,       // Tension ration is computed based on the more stretched link (same across anchors)
-			Anchor,     // Tension ration is computed only at the anchor level (unique to each anchor)
-			None        // Assume mass ratio is always needed at max
+			None = 0, // Assume mass ratio is always needed at max
+		    Cable,    // Tension ratio is computed based on the whole cable length (same accross anchors)
+			Link,     // Tension ration is computed based on the more stretched link (same accross anchors)
+			Anchor    // Tension ration is computed only at the anchor level (unique to each anchor)
 		};
 
 		public enum StretchRatioCurve
