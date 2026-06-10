@@ -175,6 +175,9 @@ extern "C" {
 
 	EXPORT int btCable_getLastNodeData(btCable* obj, btVector3* position);
 
+	EXPORT void btCable_setAnchorIndex(btCable* obj, int index);
+	EXPORT int btCable_getAnchorIndex(btCable* obj);
+
 #ifdef __cplusplus
 }
 #endif

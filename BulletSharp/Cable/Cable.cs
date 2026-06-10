@@ -548,6 +548,15 @@ namespace BulletSharp.SoftBody
 			}
 		}
 
+		public int AnchorIndex
+		{
+			get
+			{
+				return btCable_getAnchorIndex(Native);
+			}
+			set => btCable_setAnchorIndex(Native, (int)value);
+		}
+
 		public StretchRatioMode StretchRatioDetectionMode
 		{
 			get

@@ -582,3 +582,13 @@ int btCable_getLastNodeData(btCable* obj, btVector3* position)
 	BTVECTOR3_SET(position, obj->m_nodes[lastIndex].m_x);
 	return lastIndex;
 }
+
+void btCable_setAnchorIndex(btCable *obj, int index)
+{
+	obj->setAnchorIndex(index);
+}
+
+int btCable_getAnchorIndex(btCable* obj)
+{
+	return obj->getAnchorIndex();
+}
