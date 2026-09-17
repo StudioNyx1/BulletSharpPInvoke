@@ -21,6 +21,7 @@ namespace BulletSharp
 	{
 		private MotionState _motionState;
 		internal List<TypedConstraint> _constraintRefs;
+		private readonly List<RigidBody> _childrenBuffer = new List<RigidBody>(20);
 
 		public RigidBody Parent
 		{
@@ -36,27 +37,23 @@ namespace BulletSharp
 			}
 		}
 
-		public List<RigidBody> Children
+		public unsafe List<RigidBody> Children
 		{
 			get
 			{
+				_childrenBuffer.Clear();
 				int count = btRigidBody_getChildCount(Native);
-				if (count == 0) return new List<RigidBody>();
+				if (count == 0) return _childrenBuffer;
 
 				IntPtr arrayPtr = btRigidBody_getChildren(Native);
-				var children = new List<RigidBody>(count);
+				ReadOnlySpan<IntPtr> childPtrs = new ReadOnlySpan<IntPtr>((void*)arrayPtr, count);
 
-				for (int i = 0; i < count; i++)
+				foreach (IntPtr childNative in childPtrs)
 				{
-					// Read the pointer from the C++ array
-					IntPtr childNative = Marshal.ReadIntPtr(arrayPtr, i * IntPtr.Size);
-					// Look up the managed wrapper for this native pointer
 					if (GetManaged(childNative) is RigidBody managed)
-					{
-						children.Add(managed);
-					}
+						_childrenBuffer.Add(managed);
 				}
-				return children;
+				return _childrenBuffer;
 			}
 		}
 
